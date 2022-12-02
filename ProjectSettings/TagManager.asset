@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - First Plan
+  - Second Plan
+  - Third Plan
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1881349209
+    locked: 0
+  - name: Gameplay
+    uniqueID: 165222185
+    locked: 0
+  - name: First Plan
+    uniqueID: 480085629
     locked: 0
