@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &531692630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531692631}
+  m_Layer: 7
+  m_Name: Target point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &531692631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531692630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2105367611690580721}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105367611642221079
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +39,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105367611642221076}
+  - component: {fileID: 745333554}
+  - component: {fileID: 745333555}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Untagged
@@ -32,6 +64,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &745333554
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105367611642221079}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.31}
+  m_Size: {x: 3.56, y: 2.19}
+  m_Direction: 1
+--- !u!114 &745333555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105367611642221079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188ccad23c2bf1144b28763222c322cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105367611690580720
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +120,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 531692631}
   m_Father: {fileID: 2105367611642221076}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,7 +185,7 @@ SortingGroup:
   m_GameObject: {fileID: 2105367611690580720}
   m_Enabled: 1
   m_SortingLayerID: 480085629
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!1 &2105367612144938492
 GameObject:
@@ -218,7 +279,7 @@ SortingGroup:
   m_GameObject: {fileID: 2105367612144938492}
   m_Enabled: 1
   m_SortingLayerID: 480085629
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 1
 --- !u!1 &2105367612409868839
 GameObject:
@@ -312,7 +373,7 @@ SortingGroup:
   m_GameObject: {fileID: 2105367612409868839}
   m_Enabled: 1
   m_SortingLayerID: 1881349209
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &2105367613084307890
 GameObject:

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _ball;
+    [SerializeField] private Rigidbody2D _ball;
 
     public float Power = 100;
 
