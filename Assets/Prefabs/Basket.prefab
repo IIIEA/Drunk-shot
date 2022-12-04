@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _net: {fileID: 2105367611690580720}
+  _restingPoint: {fileID: 531692631}
   _data: {fileID: 11400000, guid: 1f9482731a928b64a9ee0bfec4c403a8, type: 2}
 --- !u!1 &2105367611690580720
 GameObject:
@@ -186,9 +187,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105367611690580720}
   m_Enabled: 1
-  m_SortingLayerID: 480085629
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: 165222185
+  m_SortingLayer: 2
+  m_SortingOrder: 1
 --- !u!1 &2105367612144938492
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,9 +281,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105367612144938492}
   m_Enabled: 1
-  m_SortingLayerID: 480085629
-  m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingLayerID: 165222185
+  m_SortingLayer: 2
+  m_SortingOrder: 2
 --- !u!1 &2105367612409868839
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,9 +375,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105367612409868839}
   m_Enabled: 1
-  m_SortingLayerID: 1881349209
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 165222185
+  m_SortingLayer: 2
+  m_SortingOrder: -1
 --- !u!1 &2105367613084307890
 GameObject:
   m_ObjectHideFlags: 0

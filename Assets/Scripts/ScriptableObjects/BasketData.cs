@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Basket", menuName = "Data/Basket Data", order = 51)]
 public class BasketData : ScriptableObject
 {
+    [SerializeField, Min(1)] private float _additionalChargePower;
     [SerializeField] private float _minChargePower;
     [SerializeField] private float _maxChargePower;
     [Header("Net settings")]
@@ -25,4 +26,5 @@ public class BasketData : ScriptableObject
     public float NetBounceTime => _netBounceTime;
     public float NetRealizeTime => _netRealizeTime;
     public float ReturnTime => _returnTime;
+    public float AdditionalChargePower => _additionalChargePower;
 }

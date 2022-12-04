@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59bf8f50c1f09047881ac33497f2410, type: 3}
   m_Name: StandartBasket
   m_EditorClassIdentifier: 
-  _minChargePower: 0
-  _maxChargePower: 15
+  _additionalChargePower: 55.51
+  _minChargePower: 120
+  _maxChargePower: 220
   _additionalScaleCoeff: 3
   _maxNetScale: 1.7
   _maxNegativeScale: 0.85

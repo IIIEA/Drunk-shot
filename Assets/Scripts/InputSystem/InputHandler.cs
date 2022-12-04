@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +17,6 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
     {
         _inputDetector = GetComponent<InputDetector>();
         _mainCamera = Camera.main;
-
-        Debug.Log(_interactableMask.value);
     }
 
     private void OnEnable()

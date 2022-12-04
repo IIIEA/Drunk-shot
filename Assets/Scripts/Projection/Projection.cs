@@ -23,7 +23,7 @@ public class Projection : MonoBehaviour
 
     private float _endScale => _minDotScale / 100f;
 
-    private void Start()
+    private void Awake()
     {
         CreatePoints();
 
@@ -48,7 +48,7 @@ public class Projection : MonoBehaviour
 
     private void CreatePhysicsScene()
     {
-        _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics2D));
+        _simulationScene = SceneManager.CreateScene("SimulationScene", new CreateSceneParameters(LocalPhysicsMode.Physics2D));
         _physicsScene = _simulationScene.GetPhysicsScene2D();
 
         foreach (Transform obj in _obstaclesParent)
@@ -71,7 +71,7 @@ public class Projection : MonoBehaviour
         }
     }
 
-    public void SimulateTrajectory(Rigidbody2D ballPrefab, Vector3 pos, Vector3 velocity)
+    public void Simulate(Rigidbody2D ballPrefab, Vector3 pos, Vector3 velocity)
     {
         var ghostObj = Instantiate(ballPrefab, pos, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
@@ -82,7 +82,7 @@ public class Projection : MonoBehaviour
 
         for (var i = 0; i < _visualPoints.Count; i++)
         {
-            _physicsScene.Simulate(Time.fixedDeltaTime);
+            _physicsScene.Simulate(0.05f);
             _visualPoints[i].transform.position = ghostObj.transform.position;
             _visualPoints[i].transform.localScale = _dotScale * Remap.DoRemap(0, _visualPoints.Count, DefaultDotScale, _endScale, i);
         }
