@@ -56,6 +56,7 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
         while (basket != null)
         {
             basket.SetCharge(_inputDetector.GetDragDistance(position));
+            basket.SetRotation(_inputDetector.GetDragDirection(position));
             yield return null;
         }
     }

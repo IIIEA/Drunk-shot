@@ -27,6 +27,11 @@ public class Basket : MonoBehaviour
         _chargePower = charge;
     }
 
+    public void SetRotation(Vector2 direction)
+    {
+        transform.up = direction.normalized;
+    }
+
     public void Realize()
     {
         StartCoroutine(RealizeRoutine());
