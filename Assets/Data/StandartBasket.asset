@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59bf8f50c1f09047881ac33497f2410, type: 3}
+  m_Name: StandartBasket
+  m_EditorClassIdentifier: 
+  _minChargePower: 0
+  _maxChargePower: 15
+  _additionalScaleCoeff: 3
+  _maxNetScale: 1.7
+  _maxNegativeScale: 0.85
+  _minNetScale: 1.15
+  _netBounceTime: 0.2
+  _netRealizeTime: 0.1
+  _returnTime: 0.05

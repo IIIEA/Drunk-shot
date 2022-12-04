@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(InputDetector))]
 public class InputHandler : MonoBehaviour, IMovableObjectHandler
 {
+    [SerializeField] private LayerMask _interactableMask;
+
     private InputDetector _inputDetector;
+    private Coroutine _dragRoutine;
     private Basket _basket;
     private Camera _mainCamera;
 
@@ -13,6 +16,8 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
     {
         _inputDetector = GetComponent<InputDetector>();
         _mainCamera = Camera.main;
+
+        Debug.Log(_interactableMask.value);
     }
 
     private void OnEnable()
@@ -31,26 +36,33 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
     {
         if (CheckColliderHit(position))
         {
-            StartCoroutine(DraggedRoutine(_basket));
+           _dragRoutine = StartCoroutine(DraggedRoutine(_basket, position));
         }
     }
 
     private void OnDragEnded(Vector2 position)
     {
-        StopCoroutine(DraggedRoutine(null));
+        if (_dragRoutine != null)
+        {
+            StopCoroutine(_dragRoutine);
+            _dragRoutine = null;
+
+            _basket.Realize();
+        }
     }
 
-    private IEnumerator DraggedRoutine(Basket basket)
+    private IEnumerator DraggedRoutine(Basket basket, Vector3 position)
     {
         while (basket != null)
         {
+            basket.SetCharge(_inputDetector.GetDragDistance(position));
             yield return null;
         }
     }
 
     private bool CheckColliderHit(Vector2 position)
     {
-        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero, 1f, _interactableMask.value);
 
         if (hit.collider == null)
         {

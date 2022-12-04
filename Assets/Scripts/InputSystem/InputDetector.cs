@@ -47,4 +47,16 @@ public class InputDetector : MonoBehaviour
                 break;
         }
     }
+
+    public float GetDragDistance(Vector2 startPosition)
+    {
+        return Vector2.Distance(startPosition, TouchPosition);
+    }
+
+    public Vector2 GetDragDirection(Vector3 startPosition)
+    {
+        var direction = (startPosition - TouchPosition).normalized;
+
+        return direction;
+    }
 }

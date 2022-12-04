@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 531692631}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Target point
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2105367611642221076}
   - component: {fileID: 745333554}
   - component: {fileID: 745333555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Basket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188ccad23c2bf1144b28763222c322cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _net: {fileID: 2105367611690580720}
+  _data: {fileID: 11400000, guid: 1f9482731a928b64a9ee0bfec4c403a8, type: 2}
 --- !u!1 &2105367611690580720
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +105,7 @@ GameObject:
   - component: {fileID: 2105367611690580721}
   - component: {fileID: 2105367611690580734}
   - component: {fileID: 6731816458446063796}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Net render
   m_TagString: Untagged
   m_Icon: {fileID: 0}
