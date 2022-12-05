@@ -15,7 +15,7 @@ MonoBehaviour:
   _basketCooldown: 0.3
   _additionalChargePower: 55
   _minChargePower: 100
-  _maxChargePower: 170
+  _maxChargePower: 220
   _catcPointOffset: 0.8
   _maxNetScale: 1.7
   _maxNegativeScale: 0.85
