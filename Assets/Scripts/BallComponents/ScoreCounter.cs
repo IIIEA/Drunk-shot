@@ -91,6 +91,8 @@ public class ScoreCounter : MonoBehaviour
         _points = _counter - _points;
 
         ScoreChanged?.Invoke(_counter, _dunkType, _points);
+
+        _points = _counter;
     }
 }
 
