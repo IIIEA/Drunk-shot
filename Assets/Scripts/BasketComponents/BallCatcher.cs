@@ -21,6 +21,11 @@ public class BallCatcher : MonoBehaviour
     {
         if(collision.TryGetComponent(out Ball ball))
         {
+            if (_basket.IsComplited == false)
+            {
+                ball.FirstDunk();
+            }
+
             BallCatched?.Invoke(ball);
             ball.Catch(_basket.gameObject);
 

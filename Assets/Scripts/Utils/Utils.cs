@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public static class Utils
@@ -9,9 +10,14 @@ public static class Utils
         return camera.ScreenToWorldPoint(position);
     }
 
-    public static Color SetSpriteAlpha(SpriteRenderer sprite, float alpha)
+    public static Color SetAlpha(SpriteRenderer sprite, float alpha)
     {
         return new Color(sprite.color.r, sprite.color.g, sprite.color.b, alpha);
+    }
+
+    public static Color SetAlpha(TMP_Text text, float alpha)
+    {
+        return new Color(text.color.r, text.color.g, text.color.b, alpha);
     }
 
     public static Vector2 GetPositionWithYOffset(Vector2 position, float yOffset)

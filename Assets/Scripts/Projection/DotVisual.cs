@@ -14,6 +14,6 @@ public class DotVisual : MonoBehaviour
 
     public void SetAlpha(float alpha)
     {
-        _spriteRenderer.color = Utils.SetSpriteAlpha(_spriteRenderer, alpha);
+        _spriteRenderer.color = Utils.SetAlpha(_spriteRenderer, alpha);
     }
 }

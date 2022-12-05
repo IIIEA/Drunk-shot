@@ -38,6 +38,11 @@ public class Ball : MonoBehaviour
         Waited?.Invoke(catcher);
     }
 
+    public void FirstDunk()
+    {
+        Landed?.Invoke();
+    }
+
     public void OnPaused(bool isPaused)
     {
         if (isPaused)

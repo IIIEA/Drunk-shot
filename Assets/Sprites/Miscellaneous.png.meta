@@ -80,6 +80,9 @@ TextureImporter:
   - first:
       213: -6787209937230069063
     second: Miscellaneous_26
+  - first:
+      213: -31780160646012037
+    second: Miscellaneous_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -283,10 +286,10 @@ TextureImporter:
       name: Miscellaneous_3
       rect:
         serializedVersion: 2
-        x: 1909
-        y: 0
-        width: 1855
-        height: 6056
+        x: 2532
+        y: 5054
+        width: 1232
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,9 +476,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2270
-        width: 2399
-        height: 2305
+        y: 2126
+        width: 999
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -758,6 +761,27 @@ TextureImporter:
       bones: []
       spriteID: 9b28663b58cfec1a0800000000000000
       internalID: -6787209937230069063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miscellaneous_17
+      rect:
+        serializedVersion: 2
+        x: 2533
+        y: 5556
+        width: 1231
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b732acdbc181f8ff0800000000000000
+      internalID: -31780160646012037
       vertices: []
       indices: 
       edges: []
