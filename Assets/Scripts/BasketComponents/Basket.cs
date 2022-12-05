@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
@@ -10,8 +9,10 @@ public class Basket : MonoBehaviour
     [SerializeField] private Transform _restingPoint;
     [SerializeField] private BasketData _data;
     [SerializeField] private BallCatcher _ballCatcher;
+    [SerializeField] private RingEffects _effects;
 
     private float _chargePower = 0;
+    private bool _isComplited = false;
     private bool _isEnoughtPower = false;
     private Vector3 _defaultNetScale;
     private Vector2 _defaultRestingPointPosition;
@@ -24,9 +25,12 @@ public class Basket : MonoBehaviour
     public BasketData Data => _data;
     public Transform RestingPoint => _restingPoint;
     public float ChargePower => _chargePower;
+    public bool IsComplited => _isComplited;
 
     public event Action Charged;
     public event Action Realized;
+    public event Action<Basket> Complited;
+    public event Action Restored;
 
     private void Start()
     {
@@ -48,6 +52,12 @@ public class Basket : MonoBehaviour
 
     private void OnBallCatched(Ball ball)
     {
+        if(_isComplited == false)
+        {
+            _isComplited = true;
+            Complited?.Invoke(this);
+        }
+
         _catchedBall = ball;
 
         transform.DORotate(Vector2.up, 0.2f);
@@ -132,5 +142,17 @@ public class Basket : MonoBehaviour
     {
         _net.transform.DOScaleY(_data.MinNetScale * _defaultNetScale.y, _data.NetRealizeTime)
             .OnComplete(() => _net.transform.DOScaleY(_defaultNetScale.y, _data.NetRealizeTime));
+    }
+
+    public void Dispose()
+    {
+        gameObject.transform.DOScale(0, 0.3f).OnComplete(() => gameObject.SetActive(false));
+    }
+
+    public void Restore()
+    {
+        Restored?.Invoke();
+
+        _isComplited = false;
     }
 }
