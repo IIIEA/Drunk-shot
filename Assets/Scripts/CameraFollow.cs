@@ -11,19 +11,19 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 _lastDeadZonePosition;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_injector.GameObject != null)
             _lastDeadZonePosition = _injector.GameObject.transform.position;
 
+
         if (Mathf.Abs(transform.position.y - _targetToFollow.position.y) >= _deadZone + _cameraPositionOffset)
         {
-            Vector3 currentPosition = transform.position;
-            Vector3 targetPosition = new Vector3(currentPosition.x,
-                Mathf.Clamp(_targetToFollow.position.y + _cameraPositionOffset, _lastDeadZonePosition.y - _downBorderOffset, _targetToFollow.position.y + _cameraPositionOffset)
-                , currentPosition.z);
+            Vector3 targetPosition = new Vector3(transform.position.x, _targetToFollow.position.y + _cameraPositionOffset, transform.position.z);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, _lastDeadZonePosition.y - _downBorderOffset, targetPosition.y);
 
-            transform.position = Vector3.Lerp(currentPosition, targetPosition, _followSpeed * Time.deltaTime);    
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, _followSpeed * Time.deltaTime);
+            transform.position = smoothedPosition;
         }
     }
 }
