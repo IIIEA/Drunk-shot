@@ -18,4 +18,11 @@ public static class Utils
     {
         return new Vector2(position.x, position.y - yOffset);
     }
+
+    public static float GetUpperScreenBorder(float offset = 0)
+    {
+        var rightUpBorder = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        return rightUpBorder.y + offset;
+    }
 }

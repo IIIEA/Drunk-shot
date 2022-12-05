@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BasketSpawner : MonoBehaviour
 {
+    [SerializeField] private CollectableItem _collectable;
     [SerializeField] private Basket _basketPrefab;
     [SerializeField] private Transform _leftBorder;
     [SerializeField] private Transform _rightBorder;
@@ -14,6 +15,8 @@ public class BasketSpawner : MonoBehaviour
     [SerializeField] private float _minXOffset;
     [SerializeField] private float _basketSizeX;
     [SerializeField] private float _maxRotateAngle;
+    [SerializeField, Range(0, 100)] private int _collectableSpawnChance;
+    [SerializeField] private float _collectableOffset;
 
     private List<Basket> _baskets;
 
@@ -84,7 +87,19 @@ public class BasketSpawner : MonoBehaviour
 
         basket.Complited += OnComplited;
 
+        SetCollectable(basket.transform);
         _baskets.Add(basket);
+    }
+
+    private void SetCollectable(Transform startedPosition)
+    {
+        if (Random.Range(0, 100) > _collectableSpawnChance)
+            return;
+
+        var spawnPosition = startedPosition.position + _collectableOffset * startedPosition.up;
+
+        var collectable = Instantiate(_collectable, new Vector2(spawnPosition.x, spawnPosition.y), Quaternion.identity);
+        collectable.transform.up = startedPosition.up;
     }
 
     private Vector2 GetNewPosition(Vector2 previousPosition)
