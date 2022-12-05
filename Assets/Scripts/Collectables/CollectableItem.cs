@@ -26,18 +26,11 @@ public class CollectableItem : MonoBehaviour, ICollectable
     {
         _collider2D = GetComponent<Collider2D>();
         _collider2D.isTrigger = true;
-
-        _targetPoint = new Vector3(3f, Utils.GetUpperScreenBorder(_offset), 0f);
-        _pointBezier1 = new Vector3(transform.position.x, transform.position.y - _bezierOffsetY, 0);
-
-        var middlePointY = Mathf.Abs(transform.position.y - _targetPoint.y) / 2;
-        var middlePointX = Random.Range(0, 100) > 50 ? transform.position.x - _bezierOffsetX : transform.position.x + _bezierOffsetX;
-
-        _pointBezier2 = new Vector3(middlePointX, middlePointY);
     }
 
     private void Start()
     {
+        InitBezier();
         _idleTween = transform.DOLocalMove(transform.position + _moveOffset * transform.up, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
     }
 
@@ -45,6 +38,17 @@ public class CollectableItem : MonoBehaviour, ICollectable
     {
         if (_idleTween != null)
             _idleTween.Kill();
+    }
+
+    private void InitBezier()
+    {
+        _targetPoint = new Vector2(3f, Utils.GetUpperScreenBorder(_offset));
+        _pointBezier1 = new Vector2(transform.position.x, transform.position.y - _bezierOffsetY);
+
+        var middlePointY = transform.position.y + (transform.position.y - _targetPoint.y) / 2;
+        var middlePointX = Random.Range(0, 100) > 50 ? transform.position.x - _bezierOffsetX : transform.position.x + _bezierOffsetX;
+
+        _pointBezier2 = new Vector2(middlePointX, middlePointY);
     }
 
     public void Collect()

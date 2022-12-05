@@ -97,4 +97,9 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
             _basket = basket;
         }
     }
+
+    public void OnPaused(bool isPaused)
+    {
+        enabled = !isPaused;
+    }
 }

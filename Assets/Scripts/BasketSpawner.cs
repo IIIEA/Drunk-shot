@@ -99,6 +99,7 @@ public class BasketSpawner : MonoBehaviour
         var spawnPosition = startedPosition.position + _collectableOffset * startedPosition.up;
 
         var collectable = Instantiate(_collectable, new Vector2(spawnPosition.x, spawnPosition.y), Quaternion.identity);
+
         collectable.transform.up = startedPosition.up;
     }
 

@@ -33,6 +33,7 @@ public class Basket : MonoBehaviour
     public event Action<Basket> Complited;
     public event Action Restored;
     public UnityEvent RealizedEvent;
+    public UnityEvent Catched;
 
     private void Start()
     {
@@ -60,6 +61,7 @@ public class Basket : MonoBehaviour
             Complited?.Invoke(this);
         }
 
+        Catched?.Invoke();
         _catchedBall = ball;
 
         transform.DORotate(Vector2.up, 0.2f);
