@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.Events;
 
 public class Basket : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Basket : MonoBehaviour
     public event Action Realized;
     public event Action<Basket> Complited;
     public event Action Restored;
+    public UnityEvent RealizedEvent;
 
     private void Start()
     {
@@ -107,6 +109,7 @@ public class Basket : MonoBehaviour
             _scaleTween.Complete();
 
         Realized?.Invoke();
+        RealizedEvent?.Invoke();
 
         _restingPoint.localPosition = _defaultRestingPointPosition;
 

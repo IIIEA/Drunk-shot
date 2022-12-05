@@ -1,7 +1,7 @@
 using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class CollectableItem : MonoBehaviour, ICollectable
@@ -18,6 +18,9 @@ public class CollectableItem : MonoBehaviour, ICollectable
     private Vector3 _pointBezier2;
     private Vector3 _targetPoint;
     private Tween _idleTween;
+
+    public UnityEvent Collected;
+    public UnityEvent Leaved;
 
     private void Awake()
     {
@@ -46,6 +49,8 @@ public class CollectableItem : MonoBehaviour, ICollectable
 
     public void Collect()
     {
+        Collected?.Invoke();
+
         _collider2D.enabled = false;
 
         _idleTween.Kill();
@@ -63,6 +68,10 @@ public class CollectableItem : MonoBehaviour, ICollectable
 
             yield return null;
         }
+
+        Leaved?.Invoke();
+
+        yield return new WaitForSeconds(0.3f);
 
         Destroy(gameObject);
     }
