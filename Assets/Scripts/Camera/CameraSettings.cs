@@ -19,7 +19,11 @@ public class CameraSettings : MonoBehaviour
     {
         var bounds = new Bounds();
 
-        foreach (var collider in FindObjectsOfType<Collider2D>()) bounds.Encapsulate(collider.bounds);
+        foreach (var collider in FindObjectsOfType<Collider2D>())
+        {
+            if (!collider.isTrigger)
+                bounds.Encapsulate(collider.bounds);
+        }
 
         bounds.Expand(_buffer);
 
