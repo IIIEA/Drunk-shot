@@ -81,7 +81,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _net: {fileID: 2105367611690580720}
   _restingPoint: {fileID: 531692631}
-  _offset: 0
   _data: {fileID: 11400000, guid: 1f9482731a928b64a9ee0bfec4c403a8, type: 2}
   _ballCatcher: {fileID: 528546748228071952}
 --- !u!70 &5879498272328572960
@@ -391,6 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105367613084307891}
+  - component: {fileID: 7921960337516920932}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -414,6 +414,22 @@ Transform:
   m_Father: {fileID: 2105367611642221076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7921960337516920932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105367613084307890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b895b299a49cc4da8a8ba02b2f260c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballCatcher: {fileID: 528546748228071952}
+  _upRing: {fileID: 2105367612409868837}
+  _downRing: {fileID: 2105367612144938490}
+  _color: {r: 0.44313726, g: 0.44313726, b: 0.44313726, a: 1}
 --- !u!1 &2515987743411768018
 GameObject:
   m_ObjectHideFlags: 0
