@@ -82,6 +82,16 @@ public class InputHandler : MonoBehaviour, IMovableObjectHandler
 
     public void Inject(GameObject dependency)
     {
+        if (dependency == null)
+        {
+            enabled = false;
+            return;
+        }
+        else
+        {
+            enabled = true;
+        }
+
         if(dependency.TryGetComponent(out Basket basket))
         {
             _basket = basket;

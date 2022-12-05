@@ -57,6 +57,9 @@ public class ProjectionPresentor : MonoBehaviour, IMovableObjectHandler
 
     public void Inject(GameObject dependency)
     {
+        if (dependency == null)
+            return;
+
         if (dependency.TryGetComponent(out Basket basket))
         {
             if (_basket != null)
